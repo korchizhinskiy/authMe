@@ -235,9 +235,9 @@ pythonPlatform = "Linux"
 [tool.pytest.ini_options]
 python_files = ["*_test.py", "*_tests.py", "test_*.py"]
 python_functions = ["*_test", "test_*"]
-testpaths = "app/tests"
+testpaths = "tests"
 addopts = "-rA -vv"
-pythonpath = [ "." ]
+pythonpath = [ "app" ]
 
 [tool.coverage.run]
 branch = true

@@ -17,8 +17,8 @@ from testcontainers.postgres import PostgresContainer
 from app.infrastructure.exception_handler import setup_exception_handlers
 from app.infrastructure.ioc.dependencies import Settings
 from app.infrastructure.log_config import configure_logging
-from app.tests.config import CommonSettings, DatabaseConnectionSettings, MockSettings
-from app.tests.ioc.providers import (
+from tests.config import CommonSettings, DatabaseConnectionSettings, MockSettings
+from tests.ioc.providers import (
     ApplicationConfigProvider,
     SQLAlchemyProvider,
 )
