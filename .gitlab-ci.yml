@@ -1,0 +1,12 @@
+image: docker:28.0.1
+
+include:
+  - remote: "http://git.cifra-k.ru/ci-cd/config-includes/buildings/-/raw/master/python_build.yaml"
+  - remote: "http://git.cifra-k.ru/ci-cd/config-includes/linters/-/raw/master/pyright.yaml"
+  - remote: "http://git.cifra-k.ru/ci-cd/config-includes/linters/-/raw/master/ruff.yaml"
+  - remote: "http://git.cifra-k.ru/ci-cd/config-includes/testings/-/raw/master/testing.yaml"
+
+stages:
+  - build
+  - check
+  - push

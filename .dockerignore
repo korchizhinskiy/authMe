@@ -1,0 +1,22 @@
+# Docker
+Dockerfile
+docker-compose.yaml
+.dockerignore
+
+# Environments
+.env
+
+# Venv, utils data, caches
+.venv
+.ruff_cache
+coverage-report
+
+# Git
+.git
+.gitignore
+
+# Volumes and data
+certs
+postgres_data
+
+README.md
