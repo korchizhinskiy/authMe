@@ -24,7 +24,10 @@ services:
       - DB_CONNECTION__DATABASE_HOST=${DB_CONNECTION__DATABASE_HOST:-database}
       - DB_CONNECTION__DATABASE_PORT=${DB_CONNECTION__DATABASE_PORT:-5432}
       - COMMON__LOG_LEVEL=${COMMON__LOG_LEVEL:-DEBUG}
-    
+    depends_on:
+      database:
+        condition: service_healthy
+
   database:
     container_name: database
     image: postgres:17.3-bookworm
@@ -36,3 +39,8 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_DB=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 2s
+      timeout: 1s
+      retries: 10
